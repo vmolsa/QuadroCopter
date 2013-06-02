@@ -1,3 +1,4 @@
+#include <SPI.h>
 #include "spi.h"
 
 void initSPI() {

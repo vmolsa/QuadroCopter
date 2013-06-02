@@ -3,4 +3,4 @@
 
 void initCompass();
 
-#endif 
+#endif
