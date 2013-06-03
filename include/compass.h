@@ -2,5 +2,6 @@
 #define _COMPASS_H
 
 void initCompass();
+void getCompass(int *degree);
 
 #endif

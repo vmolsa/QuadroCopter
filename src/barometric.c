@@ -27,9 +27,9 @@ void initBaro() {
 		ac1 = I2C_readInt();
 		ac2 = I2C_readInt();
 		ac3 = I2C_readInt();
-		ac4 = I2C_readInt();
-		ac5 = I2C_readInt();
-		ac6 = I2C_readInt();
+		ac4 = (unsigned int) I2C_readInt();
+		ac5 = (unsigned int) I2C_readInt();
+		ac6 = (unsigned int) I2C_readInt();
 		b1 = I2C_readInt();
 		b2 = I2C_readInt();
 		mb = I2C_readInt();

@@ -2,5 +2,6 @@
 #define _BATTERY_H
 
 void initBattery();
+void getBattery(float *voltage, int *percent);
 
 #endif
