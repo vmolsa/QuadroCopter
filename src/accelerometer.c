@@ -11,7 +11,7 @@ void initAccel() {
 
 		I2C_setRegister(ADXL345_DEVICE, 0x2D, (1 << 3));	// Set device to measure mode!
 		I2C_setRegister(ADXL345_DEVICE, 0x31, 0x09);		// Set device to full range!
-		I2C_setRegister(ADXL345_DEVICE, 0x2C, (8+2+1)); 	// 200hz Sampling
+		I2C_setRegister(ADXL345_DEVICE, 0x2C, (11)); 		// 200hz Sampling
 
 		delay(10);
 	}
