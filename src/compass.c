@@ -1,6 +1,6 @@
+#include "utils.h"
+#include "config.h"
 #include "compass.h"
-
-#define HMC6352_DEVICE 0x21
 
 void initCompass() {
 
@@ -18,5 +18,5 @@ void getCompass(int *degree) {
 	low = I2C_readByte();
 	high = I2C_readByte();
 
-	degree = ((low * 256) + high); 
+	(*degree) = (int)((low * 256) + high);
 }

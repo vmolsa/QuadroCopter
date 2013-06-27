@@ -1,6 +1,6 @@
+#include "utils.h"
+#include "config.h"
 #include "barometric.h"
-
-#define BMP085_DEVICE 0x77
 
 //	OverSampling
 //	0 = ultra low power

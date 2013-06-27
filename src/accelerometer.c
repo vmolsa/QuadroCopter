@@ -1,7 +1,7 @@
+#include "utils.h"
+#include "config.h"
 #include "i2c.h"
 #include "accelerometer.h"
-
-#define ADXL345_DEVICE 0x53
 
 int adxl345 = 0;
 
@@ -17,11 +17,11 @@ void initAccel() {
 	}
 }
 
-void getAccel(int *x, int *y, int *z);
+void getAccel(int *x, int *y, int *z) {
 	I2C_writeByteTo(ADXL345_DEVICE, 0x32);				// Request 6 bytes from device
 	I2C_RequestFrom(ADXL345_DEVICE, 6);
 
-	x = I2C_readIntReverse();
-	y = I2C_readIntReverse();
-	z = I2C_readIntReverse();
+	(*x) = I2C_readIntReverse();
+	(*y) = I2C_readIntReverse();
+	(*z) = I2C_readIntReverse();
 }
