@@ -1,7 +1,5 @@
-CFLAGS = -I../include
-
 all:
-	gcc -o quodrocopter main.c accelerometer.c barometric.c battery.c compass.c esc.c gps.c gyroscope.c i2c.c sonar.c $(CFLAGS) 
+	gcc -o quodrocopter adxl345.c bmp085.c hmc6352.c l3g4200d.c utils.c main.c -lrt -lm
 
 clean:
 	rm -fr quodrocopter

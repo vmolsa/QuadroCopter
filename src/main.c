@@ -1,54 +1,26 @@
-#include "accelerometer.h"
-#include "analog.h"
-#include "barometric.h"
-#include "battery.h"
-#include "compass.h"
 #include "config.h"
-#include "esc.h"
-#include "gpio.h"
-#include "gps.h"
-#include "gyroscope.h"
-#include "i2c.h"
-#include "sonar.h"
-#include "utils.h"
 
 int main() {
-	initI2C();
+	int i;
 
-#ifdef HAVE_LOG
-	initLog();
-#endif
+//	initADXL345();
+	initBMP085();
+	initHMC6352();
+	initL3G4200D();
 
-#ifdef HAVE_ACCELL
-	initAccel();
-#endif
+	// LOOP
 
-#ifdef HAVE_BARO
-	initBaro();
-#endif
+	for (i = 0; i < 100; i++) {
+//		getADXL345();
+		getBMP085();
+		getHMC6352();
+		getL3G4200D();
+	}
 
-#ifdef HAVE_BATTERY
-	initBattery();
-#endif
+//	freeADXL345();
+        freeBMP085();
+        freeHMC6352();
+        freeL3G4200D();
 
-#ifdef HAVE_COMPASS
-	initCompass();
-#endif
-
-#ifdef HAVE_ESC
-	initEsc();
-#endif
-
-#ifdef HAVE_GPS
-	initGps();
-#endif
-
-#ifdef HAVE_GYRO
-	initGyro();
-#endif
-
-#ifdef HAVE_SONAR
-	initSonar();
-#endif
 	return 0;
 }
